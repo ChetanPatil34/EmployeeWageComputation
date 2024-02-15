@@ -11,6 +11,9 @@ public class EmployeeWageComputation {
 		System.out.println("Welcome to Employee Wage Computation Program");
 		
 		int attendance ;
+		int dailyWage ;
+	    final int Wage_per_Hour = 20;
+	    final int Full_Day_Hour = 8;
 		
 		System.out.print("Enter An attendence [0- Apsend / 1- Present] :");
 		Random random = new Random();
@@ -25,6 +28,11 @@ public class EmployeeWageComputation {
 		else
 		{
 			System.out.println("Employee is Present");
+			
+			dailyWage = Wage_per_Hour * Full_Day_Hour ;
+			
+			System.out.println("Employee Wage:" + dailyWage);
+		
 		}
 		
 	
