@@ -12,8 +12,11 @@ public class EmployeeWageComputation {
 		
 		int attendance ;
 		int dailyWage ;
+		int employee_Type;
 	    final int Wage_per_Hour = 20;
-	    final int Full_Day_Hour = 8;
+	    final int Part_Time_Hour = 4;
+	    final int Full_Time_Hour = 8;
+	    
 		
 		System.out.print("Enter An attendence [0- Apsend / 1- Present] :");
 		Random random = new Random();
@@ -29,9 +32,22 @@ public class EmployeeWageComputation {
 		{
 			System.out.println("Employee is Present");
 			
-			dailyWage = Wage_per_Hour * Full_Day_Hour ;
+			employee_Type = random.nextInt(9)%2;
 			
-			System.out.println("Employee Wage:" + dailyWage);
+			if(employee_Type==0)
+			{
+				System.out.println("Employee is Part Time");
+				
+				dailyWage =  Wage_per_Hour * Part_Time_Hour ;
+			}
+			else
+			{
+				System.out.println("Employee is Full Time");
+				
+				dailyWage =  Wage_per_Hour * Full_Time_Hour;
+				
+			}
+			System.out.println("Employee Wage :" + dailyWage);
 		
 		}
 		
