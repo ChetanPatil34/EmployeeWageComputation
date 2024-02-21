@@ -16,15 +16,21 @@ public class EmployeeWageComputation {
 		//int fullTimer_dailyWage = 0;
 		int employee_Type;
 		int total_wage = 0;
-		int Employee_mouth_wage = 0;
+		int Employee_mouth_wage ;
+		int total_working_hr = 0;
+		int total_working_days = 1;
 	    final int Wage_per_Hour = 20;
 	    final int Part_Time_Hour = 4;
 	    final int Full_Time_Hour = 8;
-	    final int WORKING_DAYS = 20;
+	    //int working_day = 0;
 	    
-	    for(int i=1; i<=WORKING_DAYS; i++)
-	    {
-	    	System.out.println("Day :"+i);
+//	    for(int i=1; i<=WORKING_DAYS; i++)
+//	    {
+//	    	System.out.println("Day :"+i);
+	    while(total_working_hr <= 100 && total_working_days <= 20) {
+	    	
+	    	System.out.println("Day="+total_working_days);
+	    	
 		Random random = new Random();
 		attendance = random.nextInt(9) % 2;
 		
@@ -59,14 +65,18 @@ public class EmployeeWageComputation {
 		        	
 		            break;
 				}
-		
+	
 			System.out.println("--------------------");
+			
+			total_working_days++;
 	    }
 	
+		
 	    System.out.println("Total Monthly="+total_wage);
 		     
 
 	}
+	 
 }
 		
 	
