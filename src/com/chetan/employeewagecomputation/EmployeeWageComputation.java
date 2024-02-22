@@ -5,10 +5,10 @@ import java.util.Random;
 //import java.util.Random;
 
 public class EmployeeWageComputation {
+	
 
-	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Welcome to Employee Wage Computation Program");
+	
 		
 		int attendance ;
 		int dailyWage = 0;
@@ -27,6 +27,9 @@ public class EmployeeWageComputation {
 //	    for(int i=1; i<=WORKING_DAYS; i++)
 //	    {
 //	    	System.out.println("Day :"+i);
+	    public void employeeWageCalc() {
+	    System.out.println("Welcome to Employee Wage Computation Program");
+		
 	    while(total_working_hr <= 100 && total_working_days <= 20) {
 	    	
 	    	System.out.println("Day="+total_working_days);
@@ -75,9 +78,17 @@ public class EmployeeWageComputation {
 	    System.out.println("Total Monthly="+total_wage);
 		     
 
+	    }
+	public static void main(String[] args) {
+		EmployeeWageComputation employeeWageComp = new EmployeeWageComputation();
+		employeeWageComp.employeeWageCalc();
+	
+		
+	
+
 	}
 	 
-}
+	    }
 		
 	
 		
