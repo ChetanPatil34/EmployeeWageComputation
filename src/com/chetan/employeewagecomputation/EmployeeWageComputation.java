@@ -19,9 +19,12 @@ public class EmployeeWageComputation {
 		int Employee_mouth_wage ;
 		int total_working_hr = 0;
 		int total_working_days = 1;
-	    final int Wage_per_Hour = 20;
+	  //  final int Wage_per_Hour = 20;
 	    final int Part_Time_Hour = 4;
 	    final int Full_Time_Hour = 8;
+	    int working_hr_month = 100;
+	    int wage_per_hr;;
+	    int working_days;
 	    //int working_day = 0;
 	    
 //	    for(int i=1; i<=WORKING_DAYS; i++)
@@ -30,7 +33,7 @@ public class EmployeeWageComputation {
 	    public void employeeWageCalc() {
 	    System.out.println("Welcome to Employee Wage Computation Program");
 		
-	    while(total_working_hr <= 100 && total_working_days <= 20) {
+	    while(total_working_hr <= working_hr_month && total_working_days <= working_days) {
 	    	
 	    	System.out.println("Day="+total_working_days);
 	    	
@@ -52,17 +55,21 @@ public class EmployeeWageComputation {
 		        	
 		            	case 0:
 		            		System.out.println("Employee is Part Time");
-		            		dailyWage =  Wage_per_Hour * Part_Time_Hour ;
+		            		dailyWage =  wage_per_hr * Part_Time_Hour ;
+		            		total_working_hr += Part_Time_Hour ;
 		            		//System.out.println("Employee Wage :" + partTimer_dailyWage);
 		            		break;
 			  
 			           case 1:
 			        	   System.out.println("Employee is Full Time");
-			        	   dailyWage =  Wage_per_Hour * Full_Time_Hour;
+			        	   dailyWage =  wage_per_hr * Full_Time_Hour;
+			        	   total_working_hr += Full_Time_Hour;
 			        	   //System.out.println("Employee Wage :" + fullTimer_dailyWage);
 			        	   break;
 			        	   
 		        	}
+		        	
+		        	//working_hr_month=Full_Time_Hour+Part_Time_Hour ;
 		        	 total_wage += dailyWage;
 				      System.out.println("Daily_wage="+dailyWage);
 		        	
@@ -74,13 +81,22 @@ public class EmployeeWageComputation {
 			total_working_days++;
 	    }
 	
-		
+	    System.out.println("Working_hr_mouth="+total_working_hr);
 	    System.out.println("Total Monthly="+total_wage);
 		     
 
 	    }
+	    
+	    public  EmployeeWageComputation(int wage_per_hr,int working_days,int working_hr_month ) {
+	    	
+	    	this.wage_per_hr = wage_per_hr;
+	    	this.working_days = working_days;
+	    	this.working_hr_month = working_hr_month;
+	    }
+	    
+	    
 	public static void main(String[] args) {
-		EmployeeWageComputation employeeWageComp = new EmployeeWageComputation();
+		EmployeeWageComputation employeeWageComp = new EmployeeWageComputation(22,18,80);
 		employeeWageComp.employeeWageCalc();
 	
 		
